@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>She Can Connect</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .container{
+      width:90%;
+      max-width:400px;
+      background:#fff;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:10px;
+      color:#7b2cbf;
+    }
+
+    p{
+      text-align:center;
+      margin-bottom:20px;
+      color:#666;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:15px;
+    }
+
+    textarea{
+      resize:none;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      border:none;
+      background:#7b2cbf;
+      color:white;
+      font-size:16px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#5a189a;
+    }
+
+    #successMessage{
+      margin-top:15px;
+      text-align:center;
+      color:green;
+      font-weight:bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>She Can Connect</h1>
+    <p>Contact Form</p>
+
+    <form id="contactForm">
+
+      <input 
+        type="text" 
+        id="name" 
+        placeholder="Enter your name" 
+        required
+      >
+
+      <input 
+        type="email" 
+        id="email" 
+        placeholder="Enter your email" 
+        required
+      >
+
+      <textarea 
+        id="message" 
+        rows="5" 
+        placeholder="Enter your message"
+        required
+      ></textarea>
+
+      <button type="submit">Submit</button>
+
+      <div id="successMessage"></div>
+
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+
+      successMessage.innerText = "Form Submitted Successfully!";
+
+      form.reset();
+    });
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
